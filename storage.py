@@ -11,3 +11,12 @@ class Storage:
     def getAbsolutePath(self, path):
         os.path.join(self.workDir, path)
 
+    def cd(self, dirPath):
+        if dirPath is not '.':
+            if dirPath is '..':
+                if self.workDir is not '/':
+                    self.workDir = os.path.dirname(self.workDir)
+            elif os.path.isabs(dirPath):
+                self.workDir = dirPath
+            else:
+                self.workDir = os.path.join(self.workDir, dirPath)
