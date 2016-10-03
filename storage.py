@@ -20,3 +20,7 @@ class Storage:
                 self.workDir = dirPath
             else:
                 self.workDir = os.path.join(self.workDir, dirPath)
+
+    def mkdir(self, dirPath):
+        response = requests.post(self.server + '/file/createDir', {'dirPath', self.getAbsolutePath(dirPath)})
+        return response.json()
