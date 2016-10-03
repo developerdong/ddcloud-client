@@ -35,3 +35,14 @@ class Storage:
             return response.json()
         else:
             print('本地文件不存在，请检查路径')
+
+    def download(self, localFilePath, filePath):
+        if not os.path.exists(localFilePath):
+            response = requests.post(self.server + '/file/download', {'filePath', self.getAbsolutePath(filePath)})
+            if str(response.headers['Content-Type']).find('application/json') == -1:
+                with open(localFilePath, 'wb') as f:
+                    f.write(response.content)
+            else:
+                return response.json()
+        else:
+            print('本地文件已存在，请检查路径')
