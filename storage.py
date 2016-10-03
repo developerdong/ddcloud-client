@@ -24,3 +24,9 @@ class Storage:
     def mkdir(self, dirPath):
         response = requests.post(self.server + '/file/createDir', {'dirPath', self.getAbsolutePath(dirPath)})
         return response.json()
+
+    def ls(self, dirPath):
+        response = requests.post(self.server + '/file/list', {'dirPath', self.getAbsolutePath(dirPath)})
+        return response.json()
+
+
