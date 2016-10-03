@@ -8,3 +8,6 @@ class Storage:
         self.workDir = workDir
         self.server = server
 
+    def getAbsolutePath(self, path):
+        os.path.join(self.workDir, path)
+
