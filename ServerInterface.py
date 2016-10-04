@@ -3,7 +3,7 @@ import os
 import requests
 
 
-class Storage:
+class ServerInterface:
     def __init__(self, workDir, server, token):
         self.workDir = workDir
         self.server = server
