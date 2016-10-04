@@ -4,10 +4,10 @@ import requests
 
 
 class ServerInterface:
-    def __init__(self, workDir, server, token):
+    def __init__(self, workDir, server):
         self.workDir = workDir
         self.server = server
-        self.token = token
+        self.token = ''
 
     def getAbsolutePath(self, path):
         return os.path.join(self.workDir, path)
