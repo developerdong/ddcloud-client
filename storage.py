@@ -52,3 +52,15 @@ class Storage:
                 return response.json()
         else:
             print('本地文件已存在，请检查路径')
+
+    def rename(self, oldPath, newPath):
+        response = requests.post(self.server + '/file/rename',
+                                 {'oldPath': self.getAbsolutePath(oldPath), 'newPath': self.getAbsolutePath(newPath),
+                                  'token': self.token})
+        return response.json()
+
+    def move(self, oldPath, newPath):
+        response = requests.post(self.server + '/file/move',
+                                 {'oldPath': self.getAbsolutePath(oldPath), 'newPath': self.getAbsolutePath(newPath),
+                                  'token': self.token})
+        return response.json()
