@@ -64,3 +64,9 @@ class Storage:
                                  {'oldPath': self.getAbsolutePath(oldPath), 'newPath': self.getAbsolutePath(newPath),
                                   'token': self.token})
         return response.json()
+
+    def rm(self, path):
+        response = requests.post(self.server + '/file/delete',
+                                 {'path': self.getAbsolutePath(path), 'token': self.token})
+        return response.json()
+
