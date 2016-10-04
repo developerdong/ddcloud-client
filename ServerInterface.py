@@ -29,7 +29,7 @@ class ServerInterface:
 
     def ls(self, dirPath):
         response = requests.post(self.server + '/file/list',
-                                 {'dirPath': self.getAbsolutePath(dirPath), 'token': self.token})
+                                 {'dirPath': self.getAbsolutePath(dirPath or self.workDir), 'token': self.token})
         return response.json()
 
     def up(self, localFilePath, destDirPath):
