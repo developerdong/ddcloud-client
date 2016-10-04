@@ -70,3 +70,17 @@ class Storage:
                                  {'path': self.getAbsolutePath(path), 'token': self.token})
         return response.json()
 
+    def signup(self, username, password):
+        response = requests.post(self.server + '/user/signup', {'username': username, 'password': password})
+        return response.json()
+
+    def login(self, username, password):
+        response = requests.post(self.server + '/user/login', {'username': username, 'password': password})
+        result = response.json()
+        if result['status'] == 200:
+            self.token = result['token']
+        return result
+
+    def logout(self):
+        response = requests.post(self.server + '/user/logout', {'token': self.token})
+        return response.json()
