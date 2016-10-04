@@ -10,7 +10,7 @@ class Storage:
         self.token = token
 
     def getAbsolutePath(self, path):
-        os.path.join(self.workDir, path)
+        return os.path.join(self.workDir, path)
 
     def cd(self, dirPath):
         if dirPath is not '.':
