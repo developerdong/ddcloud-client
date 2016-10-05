@@ -7,7 +7,7 @@ interface = ServerInterface(INIT_WORK_DIR, SERVER)
 while True:
     args = str(input()).split()
     if args[0] == 'ls':
-        result  = interface.ls(args[1])
+        result = interface.ls(args[1])
     elif args[0] == 'cd':
         result = interface.cd(args[1])
     elif args[0] == 'mkdir':
@@ -27,6 +27,6 @@ while True:
     elif args[0] == 'login':
         result = interface.login(args[1], args[2])
     elif args[0] == 'logout':
-        result == interface.logout()
+        result = interface.logout()
     elif args[0] == 'exit':
         break
