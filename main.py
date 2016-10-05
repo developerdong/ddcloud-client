@@ -59,6 +59,8 @@ SERVER = 'http://localhost:8080'
 interface = ServerInterface(INIT_WORK_DIR, SERVER)
 while True:
     args = str(input()).split()
+    if len(args) == 0:
+        continue
     if args[0] == 'ls':
         if len(args) == 1 or len(args) == 2:
             result = interface.ls(args[1] if len(args) == 2 else None)
