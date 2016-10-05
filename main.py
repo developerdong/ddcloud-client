@@ -126,7 +126,10 @@ while True:
         else:
             printHelp('login')
     elif args[0] == 'logout':
-        result = interface.logout()
+        if len(args) == 1:
+            print(interface.logout()['result'])
+        else:
+            printHelp('logout')
     elif args[0] == 'exit':
         break
     elif args[0] == 'help':
