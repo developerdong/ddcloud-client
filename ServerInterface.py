@@ -41,7 +41,7 @@ class ServerInterface:
         else:
             print('本地文件不存在，请检查路径')
 
-    def down(self, localFilePath, filePath):
+    def down(self, filePath, localFilePath):
         if not os.path.exists(localFilePath):
             response = requests.post(self.server + '/file/download',
                                      {'filePath': self.getAbsolutePath(filePath), 'token': self.token})
