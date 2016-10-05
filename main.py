@@ -14,30 +14,44 @@ def convertBytes(length, lst=('Bytes', 'KB', 'MB', 'GB', 'TB', 'PB')):
 
 
 def printHelp(cmd=None):
-    if cmd is None or cmd == 'help':
-        pass
-    elif cmd == 'ls':
-        pass
+    helpTable = PrettyTable(['命令', '参数1', '参数2', '描述'])
+    if cmd == 'ls':
+        helpTable.add_row(['ls', 'dirPath', '空', '显示文件列表，默认显示当前工作目录'])
     elif cmd == 'cd':
-        pass
+        helpTable.add_row(['cd', 'dirPath', '空', '切换当前工作目录'])
     elif cmd == 'mkdir':
-        pass
+        helpTable.add_row(['mkdir', 'dirPath', '空', '创建目录'])
     elif cmd == 'up':
-        pass
+        helpTable.add_row(['up', 'localFilePath', 'destDirPath', '将本地文件上传到云盘中某一目录'])
     elif cmd == 'down':
-        pass
+        helpTable.add_row(['down', 'filePath', 'localFilePath', '将云盘文件保存为本地某一文件'])
     elif cmd == 're':
-        pass
+        helpTable.add_row(['re', 'oldPath', 'newPath', '重命名文件或目录'])
     elif cmd == 'mv':
-        pass
+        helpTable.add_row(['mv', 'oldPath', 'newPath', '移动文件或目录'])
     elif cmd == 'rm':
-        pass
+        helpTable.add_row(['rm', 'path', '空', '永久删除文件或目录'])
     elif cmd == 'signup':
-        pass
+        helpTable.add_row(['signup', 'username', 'password', '注册新用户'])
     elif cmd == 'login':
-        pass
+        helpTable.add_row(['login', 'username', 'password', '登录'])
     elif cmd == 'logout':
-        pass
+        helpTable.add_row(['logout', '空', '空', '注销'])
+    else:
+        helpTable.add_row(['help', '空', '空', '查看帮助'])
+        helpTable.add_row(['ls', '[dirPath]', '空', '显示文件列表，默认显示当前工作目录'])
+        helpTable.add_row(['cd', 'dirPath', '空', '切换当前工作目录'])
+        helpTable.add_row(['mkdir', 'dirPath', '空', '创建目录'])
+        helpTable.add_row(['up', 'localFilePath', 'destDirPath', '将本地文件上传到云盘中某一目录'])
+        helpTable.add_row(['down', 'filePath', 'localFilePath', '将云盘文件保存为本地某一文件'])
+        helpTable.add_row(['re', 'oldPath', 'newPath', '重命名文件或目录'])
+        helpTable.add_row(['mv', 'oldPath', 'newPath', '移动文件或目录'])
+        helpTable.add_row(['rm', 'path', '空', '永久删除文件或目录'])
+        helpTable.add_row(['signup', 'username', 'password', '注册新用户'])
+        helpTable.add_row(['login', 'username', 'password', '登录'])
+        helpTable.add_row(['logout', '空', '空', '注销'])
+        helpTable.add_row(['exit', '空', '空', '退出程序'])
+    print(helpTable)
 
 INIT_WORK_DIR = '/'
 SERVER = 'http://localhost:8080'
