@@ -1,5 +1,9 @@
 from ServerInterface import ServerInterface
 
+
+def printHelp():
+    pass
+
 INIT_WORK_DIR = '/'
 SERVER = 'http://localhost:8080'
 
@@ -30,3 +34,7 @@ while True:
         result = interface.logout()
     elif args[0] == 'exit':
         break
+    elif args[0] == 'help':
+        printHelp()
+    else:
+        printHelp()
