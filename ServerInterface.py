@@ -49,6 +49,7 @@ class ServerInterface:
             if str(response.headers['Content-Type']).find('application/json') == -1:
                 with open(localFilePath, 'wb') as f:
                     f.write(response.content)
+                    print('下载成功')
             else:
                 return response.json()
         else:
