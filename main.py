@@ -116,7 +116,10 @@ while True:
         else:
             printHelp('rm')
     elif args[0] == 'signup':
-        result = interface.signup(args[1], args[2])
+        if len(args) == 3:
+            print(interface.signup(args[1], args[2])['result'])
+        else:
+            printHelp('signup')
     elif args[0] == 'login':
         result = interface.login(args[1], args[2])
     elif args[0] == 'logout':
