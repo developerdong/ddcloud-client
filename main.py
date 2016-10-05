@@ -87,7 +87,12 @@ while True:
         else:
             printHelp('mkdir')
     elif args[0] == 'up':
-        result = interface.up(args[1], args[2])
+        if len(args) == 3:
+            result = interface.up(args[1], args[2])
+            if result is not None:
+                print(result['result'])
+        else:
+            printHelp('up')
     elif args[0] == 'down':
         result = interface.down(args[1], args[2])
     elif args[0] == 're':
