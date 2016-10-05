@@ -101,7 +101,10 @@ while True:
         else:
             printHelp('down')
     elif args[0] == 're':
-        result = interface.re(args[1], args[2])
+        if len(args) == 3:
+            print(interface.re(args[1], args[2])['result'])
+        else:
+            printHelp('re')
     elif args[0] == 'mv':
         result = interface.mv(args[1], args[2])
     elif args[0] == 'rm':
