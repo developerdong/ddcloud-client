@@ -13,14 +13,15 @@ class ServerInterface:
         return os.path.join(self.workDir, path)
 
     def cd(self, dirPath):
-        if dirPath is not '.':
-            if dirPath is '..':
-                if self.workDir is not '/':
+        if dirPath != '.':
+            if dirPath == '..':
+                if self.workDir != '/':
                     self.workDir = os.path.dirname(self.workDir)
             elif os.path.isabs(dirPath):
                 self.workDir = dirPath
             else:
                 self.workDir = os.path.join(self.workDir, dirPath)
+        print(self.workDir)
 
     def mkdir(self, dirPath):
         response = requests.post(self.server + '/file/createDir',
