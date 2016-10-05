@@ -27,7 +27,7 @@ class ServerInterface:
                                  {'dirPath': self.getAbsolutePath(dirPath), 'token': self.token})
         return response.json()
 
-    def ls(self, dirPath):
+    def ls(self, dirPath=None):
         response = requests.post(self.server + '/file/list',
                                  {'dirPath': self.getAbsolutePath(dirPath or self.workDir), 'token': self.token})
         return response.json()
