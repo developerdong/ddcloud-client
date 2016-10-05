@@ -111,7 +111,10 @@ while True:
         else:
             printHelp('mv')
     elif args[0] == 'rm':
-        result = interface.mv(args[1], args[2])
+        if len(args) == 2:
+            print(interface.rm(args[1])['result'])
+        else:
+            printHelp('rm')
     elif args[0] == 'signup':
         result = interface.signup(args[1], args[2])
     elif args[0] == 'login':
