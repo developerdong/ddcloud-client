@@ -1,8 +1,31 @@
 from ServerInterface import ServerInterface
 
 
-def printHelp():
-    pass
+def printHelp(cmd=None):
+    if cmd is None or cmd == 'help':
+        pass
+    elif cmd == 'ls':
+        pass
+    elif cmd == 'cd':
+        pass
+    elif cmd == 'mkdir':
+        pass
+    elif cmd == 'up':
+        pass
+    elif cmd == 'down':
+        pass
+    elif cmd == 're':
+        pass
+    elif cmd == 'mv':
+        pass
+    elif cmd == 'rm':
+        pass
+    elif cmd == 'signup':
+        pass
+    elif cmd == 'login':
+        pass
+    elif cmd == 'logout':
+        pass
 
 INIT_WORK_DIR = '/'
 SERVER = 'http://localhost:8080'
