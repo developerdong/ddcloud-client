@@ -82,7 +82,10 @@ while True:
         else:
             printHelp('cd')
     elif args[0] == 'mkdir':
-        result = interface.mkdir(args[1])
+        if len(args) == 2:
+            print(interface.mkdir(args[1])['result'])
+        else:
+            printHelp('mkdir')
     elif args[0] == 'up':
         result = interface.up(args[1], args[2])
     elif args[0] == 'down':
